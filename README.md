@@ -1,6 +1,7 @@
 # learning-paths
 ## Testes Automatizados com Cypress (básico)
 ### Parte 1: Interagindo com a página web 
+
     - beforeEach(): Antes de cada teste
     - cy.visit("url"): Navegando através de URL
     - cy.get("#str").type(value): Digitando em campos de texto
