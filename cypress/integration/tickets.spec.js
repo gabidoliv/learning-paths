@@ -12,8 +12,12 @@ describe("Tickets", () => {
         cy.get("#signature").type(firstName + ' ' + lastName);
     });
 
-    it.only("select two tickets", () => {    // only -> lib do mocha para unit tests, será feito apenas o teste marcado
+    it("select two tickets", () => {    
         cy.get("#ticket-quantity").select("2");
+    });
+
+    it.only("select 'vip' ticket type", () => {
+        cy.get("#vip").check(); 
     });
     
     it("has 'TICKETBOX` header's heading", () => {});
