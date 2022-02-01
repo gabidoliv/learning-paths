@@ -1,0 +1,28 @@
+{
+  "name": "learning-paths",
+  "version": "1.0.0",
+  "description": "Curso de Cypress da Escola TAT",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabidoliv/learning-paths.git"
+  },
+  "keywords": [
+    "cypress",
+    "test",
+    "automation",
+    "e2e"
+  ],
+  "author": "Gabriela",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabidoliv/learning-paths/issues"
+  },
+  "homepage": "https://github.com/gabidoliv/learning-paths#readme",
+  "dependencies": {
+    "cypress": "^9.4.1"
+  }
+}

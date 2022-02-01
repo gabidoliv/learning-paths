@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# curso-cypress
+.DS_Store
+cypress/screenshots/
+cypress/videos/
+node_modules/
