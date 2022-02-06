@@ -2,8 +2,8 @@ describe("Tickets", () => {
     beforeEach(() => cy.visit("https://ticket-box.s3.eu-central-1.amazonaws.com/index.html"));
 
     it("fills all the text input fields", () => {
-        const firstName = "Gabriela"
-        const lastName = "Oliveira"
+        const firstName = "Gabriela";
+        const lastName = "Oliveira";
 
         cy.get("#first-name").type(firstName);
         cy.get("#last-name").type(lastName);
@@ -34,7 +34,7 @@ describe("Tickets", () => {
         cy.get("header h1").should("contain", "TICKETBOX");
     });
 
-    it.only("alerts on invalid email", () => {
+    it("alerts on invalid email", () => {
         cy.get("#email")
           .as("email")
           .type("gabi.oliv16-gmail.com");
@@ -50,4 +50,16 @@ describe("Tickets", () => {
         //cy.get("@invalidEmail").should("not.exist");}); 
         cy.get("#email.invalid").should("not.exist");
     })
+    it.only("fills and reset the form", () => {
+        const firstName = "Gabriela";
+        const lastName = "Oliveira";
+
+        cy.get("#first-name").type(firstName);
+        cy.get("#last-name").type(lastName);
+        cy.get("#email").type("gabi.oliv16@gmail.com");
+        cy.get("#ticket-quantity").select("2");
+        cy.get("#vip").check(); 
+        cy.get("#friend").check();
+        cy.get("#requests").type("More cheese");
+    });
 });
