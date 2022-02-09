@@ -53,6 +53,7 @@ describe("Tickets", () => {
     it.only("fills and reset the form", () => {
         const firstName = "Gabriela";
         const lastName = "Oliveira";
+        const fullName = `${firstName} ${lastName}`;
 
         cy.get("#first-name").type(firstName);
         cy.get("#last-name").type(lastName);
@@ -61,5 +62,16 @@ describe("Tickets", () => {
         cy.get("#vip").check(); 
         cy.get("#friend").check();
         cy.get("#requests").type("More cheese");
-    });
+        cy.get(".agreement p").should(
+            "contain",
+            `I, ${fullName}, wish to buy 2 VIP tickets.`
+        );
+        cy.get("#agree").click();
+        cy.get("#signature").type(fullName);
+        cy.get("button[type='submit']")
+            .as("submitButton")
+            .should("not.be.disabled");
+        cy.get("button[type='reset']").click();
+        cy.get("@submitButton").should("be.disabled");
+        });
 });
