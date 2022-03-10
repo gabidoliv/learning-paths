@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Lógica de programação com Javascript</h1>
+        <script>
+            //Pedir para o usuario digitar um numero
+            var n1 = prompt("Digite um número ");
+            n1 = parseFloat(n1);
+
+            //Pedir para o usuario digitar outro numero
+            var n2 = parseFloat(prompt("Digite outro número"));
+            
+            //Calcular a media
+            var media = (n1+n2) / 2;
+
+            //Verificar se a media é maior que 5
+
+            var mediaMaior = media > 5;
+
+            //Mostrar um boolean indicando se a media for maior que 5
+            alert("A média é maior que 5? " + mediaMaior);
+        </script>
+    </body>
+</html>
+
+<!-- Comparing datatypes with math operators
+    2 === 2 //true - comparing value and datatype
+    '2' == 2 //true - comparing value
+    '2' === 2 //false - not the same datatype '2' is str
+    2 !== 2 //false
+    2 != 2 //false
+    '2' != 2 //false - same value for both
+    '2' !== 2 //true - same value, but different datatype -->
