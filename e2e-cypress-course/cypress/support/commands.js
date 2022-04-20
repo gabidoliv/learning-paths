@@ -42,7 +42,7 @@ Cypress.Commands.add('login', (email, password) => {
     cy.url().should("include", "/Account/Login");
 
     //Enter username and password
-    cy.get('#UserName').type(user.Username);
+    cy.get('#UserName').type(Cypress.env("username"));
     cy.get('#Password').type(user.Password);
 
     cy.get(".btn").click({ force: true });

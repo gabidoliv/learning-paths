@@ -1,3 +1,9 @@
 {
-    "video": true
+    "video": true,
+    "screenshotsFolder": "cypress/videos",
+    "baseUrl": "http://eaapp.somee.com/",
+    "ignoreTestFiles": "*.js",
+    "devDependencies": {
+        "cypress-dark": "^1.8.3"
+    }
 }
