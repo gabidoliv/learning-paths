@@ -23,3 +23,27 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add('login', (email, password) => { 
+    //Perform login click
+    cy.contains("Login").click();
+
+    // Long way of working with Promise (Closure)
+    // cy.get("#loginLink").then(($link) => {
+    //      return $link.text();
+    // }).as("linkText");
+
+    // Shorthand wat of working with promise using invoke
+    cy.get("#loginLink").invoke('text').as("linkText");
+
+    cy.get("@linkText").then(($x) => {
+        expect($x).is.eql('Login');
+    })
+
+    cy.url().should("include", "/Account/Login");
+
+    //Enter username and password
+    cy.get('#UserName').type(user.Username);
+    cy.get('#Password').type(user.Password);
+
+    cy.get(".btn").click({ force: true });
+})
