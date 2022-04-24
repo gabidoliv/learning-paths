@@ -23,6 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import './commands'
+
+Cypress.on('uncaught:exception', (err, runnable) => {
+    // returning false here prevents Cypress from failing the test
+    return false
+  })
+
 Cypress.Commands.add('login', (email, password) => { 
     //Perform login click
     cy.contains("Login").click();
@@ -43,7 +50,8 @@ Cypress.Commands.add('login', (email, password) => {
 
     //Enter username and password
     cy.get('#UserName').type(Cypress.env("username"));
-    cy.get('#Password').type(user.Password);
+    cy.get('#Password').type(Cypress.env("password"));
+    //cy.get('#Password').type(user.Password);
 
     cy.get(".btn").click({ force: true });
 })
